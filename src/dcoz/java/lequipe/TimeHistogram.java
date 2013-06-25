@@ -87,7 +87,7 @@ public class TimeHistogram {
   public String printCSV() {
     String csv = new String("time, all, men, women\n");
 
-    for (int i = minBinIndex; i < maxBinIndex; ++i) {
+    for (int i = minBinIndex; i <= maxBinIndex; ++i) {
       csv += getTimeStr(i) + ", " + bins[0][i] + ", " + bins[1][i] + ", " + bins[2][i] + "\n";
     }
     return csv;
