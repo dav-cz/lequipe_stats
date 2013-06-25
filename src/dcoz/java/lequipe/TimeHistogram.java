@@ -46,11 +46,6 @@ public class TimeHistogram {
 
     // Initialize the bin array.
     bins = new int[NUM_CAT_HISTOGRAMS][numBins];
-    for (int i = 0; i < numBins; ++i) {
-      bins[0][i] = 0;
-      bins[1][i] = 0;
-      bins[2][i] = 0;
-    }
   }
 
   // Adds the given list of infos into the time histogram.
@@ -90,7 +85,7 @@ public class TimeHistogram {
 
   // Outputs the time histogram into a CSV string.
   public String printCSV() {
-    String csv = new String("temps, total, homme, femmes\n");
+    String csv = new String("time, all, men, women\n");
 
     for (int i = minBinIndex; i < maxBinIndex; ++i) {
       csv += getTimeStr(i) + ", " + bins[0][i] + ", " + bins[1][i] + ", " + bins[2][i] + "\n";

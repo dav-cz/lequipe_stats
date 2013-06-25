@@ -11,7 +11,7 @@ public class ResultAnalyzer {
   private static final int HISTO_BIN_SECS = 30;
 
   // Number of result pages to browse.
-  private static final int NUM_RESULT_PAGES = 10;
+  private static final int NUM_RESULT_PAGES = 277;
 
   // Save result string to file.
   static private void saveToFile(String filename, String result) {
@@ -31,7 +31,7 @@ public class ResultAnalyzer {
     System.out.println("start");
 
     // Go over all the result pages.
-    for (int i = 1; i < NUM_RESULT_PAGES; ++i) {
+    for (int i = 1; i <= NUM_RESULT_PAGES; ++i) {
       System.out.println("page " + i);
 
       // Fetch the page and parse its RunnerInfos.
