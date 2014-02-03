@@ -1,9 +1,10 @@
-package dcoz.java.lequipe;
+package davcz.java.lequipe;
 
 import java.io.PrintWriter;
 import java.util.List;
 
 /**
+ * Entry point for the application.
  * Outputs the time distribution from the 10km Lequipe race, Paris June 23rd 2013.
  */
 public class ResultAnalyzer {
@@ -12,6 +13,9 @@ public class ResultAnalyzer {
 
   // Number of result pages to browse.
   private static final int NUM_RESULT_PAGES = 277;
+
+  // Path to output file. By default, saved to current working directory.
+  private static final String RESULT_OUTPUT_FILE = "results.csv";
 
   // Save result string to file.
   static private void saveToFile(String filename, String result) {
@@ -31,6 +35,7 @@ public class ResultAnalyzer {
     System.out.println("start");
 
     // Go over all the result pages.
+    // TODO: do this across multi threads to speed things up.
     for (int i = 1; i <= NUM_RESULT_PAGES; ++i) {
       System.out.println("page " + i);
 
@@ -41,7 +46,7 @@ public class ResultAnalyzer {
       timeHisto.addRunnerInfos(infos);
     }
 
-    // Output the time histogram to CSV.
-    saveToFile("/tmp/results.csv", timeHisto.printCSV());
+    // Output the time histogram to a CSV file.
+    saveToFile(RESULT_OUTPUT_FILE, timeHisto.printCSV());
   }
 }

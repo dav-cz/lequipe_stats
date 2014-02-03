@@ -1,11 +1,11 @@
-package dcoz.java.lequipe;
+package davcz.java.lequipe;
 
 import java.util.List;
 
 /**
  * Computes a time histogram from a list of runner infos.
  *
- * This actually manages three time histogram:
+ * This actually manages three time histograms:
  * 1) one for all the runners.
  * 2) one for the MEN runners.
  * 3) one for the WOMEN runners.
@@ -13,6 +13,7 @@ import java.util.List;
 public class TimeHistogram {
   // Number of time histograms.
   private static final int NUM_CAT_HISTOGRAMS = 3;
+
   private static final int CAT_INDEX_ALL = 0;
   private static final int CAT_INDEX_MEN = 1;
   private static final int CAT_INDEX_WOMEN = 2;
@@ -33,7 +34,7 @@ public class TimeHistogram {
   // The range of bin indexes for which we have data.
   // This allows us to limit the CSV output to just what was actually "covered" by the runners.
   // These two values will be updated as new data is added.
-  private int minBinIndex;
+  private int minBinIndex = 0;
   private int maxBinIndex = 0;
 
   public TimeHistogram(int binSecs) {

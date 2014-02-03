@@ -1,4 +1,4 @@
-package dcoz.java.lequipe;
+package davcz.java.lequipe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Parses a result page into a list of RunnerInfos.
+ * Parses a lequipe's result page given as a List<Strings> into a list of RunnerInfos.
  */
 public class PageParser {
   // Pattern to extract a runner's category.
@@ -20,7 +20,7 @@ public class PageParser {
   public PageParser() {}
 
   // Converts a category string as seen on the website into the relevant category enum.
-  RunnerInfo.Category stringToCat(String catStr) {
+  private RunnerInfo.Category stringToCat(String catStr) {
     if (catStr.contains("Femme")) {
       return RunnerInfo.Category.WOMEN;
     } else {
@@ -33,7 +33,7 @@ public class PageParser {
 
     RunnerInfo info = new RunnerInfo();
 
-    // Browse the page line.
+    // Browse the page lines.
     for (String line : strings) {
       // Extract the category if possible.
       Matcher categoryMatcher = CATEGORY_PATTERN.matcher(line);

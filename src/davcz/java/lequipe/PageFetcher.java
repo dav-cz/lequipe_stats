@@ -1,4 +1,4 @@
-package dcoz.java.lequipe;
+package davcz.java.lequipe;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,7 +18,7 @@ public class PageFetcher {
 
   public List<String> fetch(int pageNumber) {
     List<String> strings = new ArrayList<String>();
-    // Full page address.
+    // Build full page address.
     String address = URL_BASE + pageNumber;
     URL url;
     HttpURLConnection conn;

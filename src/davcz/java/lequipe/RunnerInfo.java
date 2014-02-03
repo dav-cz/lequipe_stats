@@ -1,4 +1,4 @@
-package dcoz.java.lequipe;
+package davcz.java.lequipe;
 
 /**
  * Simple structure that holds some basic information for a given Runner.
